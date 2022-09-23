@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gameofpig</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/pig.png">
+</head>
+
+<body>
+    <script src="script.js" defer></script>
+    <div class="header">
+        <div class="container header__body">
+            <div class="logo">
+                <a href="https://www.flaticon.com/premium-icon/pig_4478355?term=pig&related_id=4478355" target="_blank"
+                    title="Зображення взато з flaticon.com"><img src="img/pig.png" class="logo__img" alt=""></a>
+                <p class="logo__text">Game Of Pig</p>
+            </div>
+        </div>
+    </div>
+    <div class="container content">
+        <div class="game-mode">
+            <button class="game-mode__button button active">Singleplayer</button>
+            <button class="game-mode__button button">Multiplayer</button>
+        </div>
+        <div class="game block">
+            <div class="game__info">
+                <div class="game__icon">
+                    <img src="img/pig-icon1.png" alt="pig">
+                </div>
+                <div class="game-score">
+                    <div class="game-score__group" data-player='1'>
+                        <p class="game-score__name">My score</p>
+                        <div class="game-score__score">
+                            <div class="game-score__progress"></div>
+                            <div class="game-score__turn-progress"></div>
+                        </div>
+                        <p class="game-score__count">0</p>
+                    </div>
+                    <div class="game-score__group" data-player='2'>
+                        <p class="game-score__name">Opponent<br />score</p>
+                        <div class="game-score__score">
+                            <div class="game-score__progress"></div>
+                            <div class="game-score__turn-progress"></div>
+                        </div>
+                        <p class="game-score__count">0</p>
+                    </div>
+                </div>
+            </div>
+            <p class="game__turn">Your Turn</p>
+            <div class="game__dice">
+                <ul class="dice dice_one active" data-diceid="1">
+                    <li class="dice__point"></li>
+                </ul>
+                <ul class="dice dice_two" data-diceid="2">
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                </ul>
+
+                <ul class="dice dice_three" data-diceid="3">
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                </ul>
+
+                <ul class="dice dice_four" data-diceid="4">
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                </ul>
+
+                <ul class="dice dice_five" data-diceid="5">
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                </ul>
+
+                <ul class="dice dice_six" data-diceid="6">
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                    <li class="dice__point"></li>
+                </ul>
+            </div>
+            <p>Turn total</p>
+            <p class="game__turn-score">0</p>
+            <div class="game__controll">
+                <button class="game__button_green game__button btn-roll">Roll</button>
+                <button class="game__button_red  game__button btn-hold">Save</button>
+            </div>
+        </div>
+        <div class="game-instruction block">
+            <h4 class="game-instruction__title">Insturction</h4>
+            <p class="game-instruction__text">Each turn, a player repeatedly rolls a die until either a 1 is rolled or
+                the player decides to "hold":
+            </p>
+            <ul class="game-instruction__list">
+                <li>
+                    If the player rolls a 1, they score nothing and it becomes the next player's turn.
+                </li>
+                <li>
+                    If the player rolls any other number, it is added to their turn total and the player's turn
+                    continues.
+                </li>
+                <li>
+                    If a player chooses to "hold", their turn total is added to their score, and it becomes the next
+                    player's turn.
+                </li>
+            </ul>
+            <p class="game-instruction__text">The player to score 100 or more points wins.</p>
+            <p class="game-instruction__text">
+                For example, the first player, Donald, begins a turn with a roll of 5. Donald could hold and score 5
+                points, but chooses to roll again. Donald rolls a 2, and could hold with a turn total of 7 points, but
+                chooses to roll again. Donald rolls a 1, and must end his turn without scoring. The next player, Alexis,
+                rolls the sequence 4-5-3-5-5, after which she chooses to hold, and adds her turn total of 22 points to
+                her score.
+            </p>
+            <p class="game-instruction__text">
+                You can learn more <a href="https://en.wikipedia.org/wiki/Pig_(dice_game)" target="_blank">here</a>.
+            </p>
+        </div>
+        <div class="modal-wrap hide"></div>
+        <div class="modal-window block hide">
+            <p class="modal-window__text">You win this game</p>
+            <button class="modal-window__button">OK</button>
+        </div>
+        <div class="modal-multiplayer hide block">
+            <p class="modal-multiplayer__text">Waiting for player</p>
+            <p class="modal-multiplayer__time">10</p>
+        </div>
+    </div>
+</body>
+
+</html>
